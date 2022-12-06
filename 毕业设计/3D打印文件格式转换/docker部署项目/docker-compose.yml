@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  mywebserver:
+    build: ./
+    ports:
+      - "8081:8081"
+    networks:
+      - mynet
+    depends_on:
+          - redis
+  redis:
+    image: "redis:latest"
+    container_name: myredis
+    networks:
+      - mynet
+networks:
+    mynet:
+      driver: bridge	
