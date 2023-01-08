@@ -116,7 +116,15 @@ git add ./*
 git commit -m 信息
 ```
 
-**四、设置忽略文件（.gitignore）**
+**四、查看文件的改变**
+
+* 使用`git diff`查看改变的文件
+
+```bash
+git diff
+```
+
+**五、设置忽略文件（.gitignore）**
 
 * 提交时忽略某些文件
 * 可以使用通配符`*`、`?`
@@ -205,12 +213,34 @@ git merge 指定的分支
 git branch -d 分支名
 ```
 
-**五、删除远程分支**
+**五、提交代码到分支**
+
+```bash
+git push origin 指定分支
+```
+
+**六、删除远程分支**
 
 ```shell
 git push origin --delete 分支名
 git branch -dr 分支名
 ```
+
+**七、合并代码**
+
+* 当前分支与某分支的代码进行合并
+
+```bash
+git rebase 分支名
+```
+
+**八、Github上New pull request**
+
+* 请求master分支管理者将个人分支的改动合并到主分支
+
+**九、Github上的Squash and merge**
+
+* 合并分支的改变，将分支代码同步到主分支上
 
 <img src="./photo/git分支.png" style="zoom:80%;" />
 
