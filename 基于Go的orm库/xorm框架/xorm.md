@@ -94,6 +94,9 @@ type User struct{
     Id 		int64	`xorm:"id"`
     Name	string	`xorm:"name"`
     Age		uint8	`xorm:"age"`
+    Passwd string 	`xorm:"varchar(200)"`		//设置字段属性
+    Created time.Time `xorm:"created"`			//使用钩子函数，创建时自动写入时间
+    Updated time.Time `xorm:"updated"`			//使用钩子函数，更新时自动写入时间
 }
 func main(){
     ...
