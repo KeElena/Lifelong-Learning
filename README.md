@@ -28,9 +28,9 @@
 
 [RabbitMQ学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/RabbitMQ)
 
-## 常见算法
+## 算法
 
-[雪花算法](https://gitee.com/fish_keqing/personal-code/tree/master/雪花算法)
+[雪花算法](https://gitee.com/fish_keqing/personal-code/tree/master/算法/雪花算法)
 
 ## 服务器代理技术相关笔记
 
