@@ -1,0 +1,29 @@
+body,div,p{
+    margin: 0;
+    padding: 0;
+}
+#father{
+    position: relative;
+    width: 200px;
+    height:260px
+}
+#img_one{
+    height: 200px;
+    width: 200px;
+    z-index: 2;
+}
+#img_two{
+    z-index: 1;
+    position: absolute;
+    bottom:200px;
+    height: 60px;
+    width: 60px;
+}
+#content{
+    font-size: 25px;
+    text-align: center;
+    color:lightgreen;
+    position: absolute;
+    bottom:25px;
+    left:50px;
+}

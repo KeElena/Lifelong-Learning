@@ -1,0 +1,27 @@
+h1{
+    color:green;
+    font-weight: bold;
+    text-indent: 2em;
+    background: burlywood;
+}
+a{
+    font-size: 18px;
+    font-weight: bold;
+    color: orange;
+    text-decoration: none;
+}
+a:hover{
+    color:violet;
+}
+a:active{
+     color: skyblue;
+ }
+ul li{
+    height:30px;
+    list-style: none;
+    text-indent: 1em;
+}
+#item{
+    background: beige;
+    width: 250px;
+}
