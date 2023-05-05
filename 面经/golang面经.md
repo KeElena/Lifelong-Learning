@@ -100,7 +100,7 @@ Go的调度器内部有四个重要的结构：
 - P:Processor，处理器，它的主要用途就是用来执行goroutine的，所以它也维护了一个goroutine队列，里面存储了所有需要它来执行的goroutine
 - Sched：代表调度器，它维护有存储M和G的队列以及调度器的一些状态信息等。
 
-<img src="./photo/3014ebb137414b968ea0deed8c4196e2tplv-k3u1fbpfcp-zoom-in-crop-mark4536000.jpeg" alt="img" style="zoom:80%;" />
+<img src="./photo/协程与线程.jpeg" alt="img" style="zoom:80%;" />
 
 ### 协程的优势
 
@@ -124,9 +124,11 @@ Go的调度器内部有四个重要的结构：
 
 <img src="./photo/context.png" style="zoom:80%;" />
 
+### channel底层实现
 
+* channel由发送等待队列、接收等待队列、缓冲区和互斥锁组成
+* 缓冲区由环状循环队列组成，环形缓冲可以大幅降低回收内存的开销
+* 互斥锁保证同一时刻只有一个协程存数据或取数据
 
-
-
-
+<img src="./photo/channel底层.png" style="zoom:80%;" />
 
