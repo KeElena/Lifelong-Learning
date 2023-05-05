@@ -491,7 +491,7 @@ SELECT COUNT(CustomerID),Country FROM Customers GROUP BY Country;
 #方法一
 SELECT COUNT(CustomerID),Country FROM Customers GROUP BY CustomerID ORDER BY COUNT(CustomerID) DESC;
 #方法二
-SELECT COUNT(CustomerID) AS num,Country FROM Customers GROUP BY CustomerID ORDER BY num DESC;
+SELECT COUNT(CustomerID) AS num,Country FROM Customers GROUP BY Country ORDER BY num DESC;
 ```
 
 # 引用
