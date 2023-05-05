@@ -1,0 +1,90 @@
+syntax="proto3";
+option go_package=".;server";
+
+message AccountAddress{
+  string accountAddr=1;
+}
+
+message AccountPwd{
+  string password=1;
+}
+
+message ContractAddr{
+  string contractAddr=1;
+}
+
+message Success{
+  bool ok=1;
+}
+
+message Balance{
+  string balance=1;
+}
+
+message Prove{
+  bool voted=1;
+  string idx=2;
+  string time=3;
+}
+
+message CreateTransaction{
+  string keyStoreName=1;
+  string password=2;
+}
+
+message AccountInfo{
+  string accountAddr=1;
+  string keyStoreName=2;
+}
+
+message ContractContent{
+  repeated string options=1;
+  repeated uint32 Voting=2;
+  uint64 expireTime=3;
+}
+
+message AllAddress{
+  string accountAddr=2;
+  string contactAddr=1;
+}
+
+message ContractInfo{
+  string contractAddr=1;
+  bool ok=2;
+}
+
+message InitInfo{
+  string contractAddr=1;
+  string keyStoreName=2;
+  string password=3;
+  uint64 expireTime=4;
+  repeated string options=5;
+}
+
+message InitVote{
+  string contractAddr=1;
+  string keyStoreName=2;
+  string password=3;
+  uint32 idx=4;
+}
+
+message Null{}
+
+service Vote{
+  //帐号相关
+  rpc CreateAccount(AccountPwd)returns(AccountInfo);
+  //部署合约
+  rpc DeployContract(CreateTransaction)returns(ContractInfo);
+  //初始化合约内容
+  rpc InitContractInfo(InitInfo)returns(Success);
+  //投票
+  rpc Vote(InitVote)returns(Success);
+  //获取以太币数量
+  rpc GetBalance(AccountAddress)returns(Balance);
+  //获取合约内容
+  rpc GetContractContent(ContractAddr)returns(ContractContent);
+  //获取票据内容
+  rpc GetVote(AllAddress)returns(Prove);
+  //水龙头转账
+  rpc WithDraw(AccountAddress)returns(Null);
+}

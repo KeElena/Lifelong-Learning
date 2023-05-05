@@ -2,15 +2,19 @@
 
 ## 编程语言相关笔记
 
-[Golang学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0)
+[Golang学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/Golang)
 
-[Golang实践代码](https://gitee.com/fish_keqing/personal-code/tree/master/Golang%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Golang%E7%9B%B8%E5%85%B3%E5%AE%9E%E8%B7%B5)
+[JavaScript学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/JavaScript)
 
-[HTML学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0)
+## 标记语言相关笔记
+
+[HTML学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/HTML)
+
+[CSS学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/CSS)
 
 ## 虚拟化容器技术相关笔记
 
-[docker学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0)
+[docker学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/docker)
 
 ## 关系数据库相关笔记
 
@@ -18,17 +22,25 @@
 
 ## NoSQL数据库相关笔记
 
-[redis学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/redis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0)
+[redis学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/redis)
+
+## 消息中间件相关
+
+[RabbitMQ学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/RabbitMQ)
+
+## 常见算法
+
+[雪花算法](https://gitee.com/fish_keqing/personal-code/tree/master/雪花算法)
 
 ## 服务器代理技术相关笔记
 
-[nginx学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/nginx%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0)
+[nginx学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/nginx)
 
 ## Go语言相关框架笔记
 
-[Go-Gin框架学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/Golang_GIN%E6%A1%86%E6%9E%B6)
+[Go-gin](https://gitee.com/fish_keqing/personal-code/tree/master/Go-gin)
 
-[Go-ORM框架学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/%E5%9F%BA%E4%BA%8EGo%E7%9A%84orm%E5%BA%93)
+[基于Go的orm库](https://gitee.com/fish_keqing/personal-code/tree/master/基于Go的orm库)
 
 ## Git相关笔记
 
@@ -36,7 +48,11 @@
 
 ## 微服务框架相关笔记
 
-[gRPC微服务框架学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/gRPC)
+[gRPC学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/gRPC)
+
+## 自动化模拟
+
+[pyautogui](https://gitee.com/fish_keqing/personal-code/blob/master/自动化模拟/pyautogui.md)
 
 ## 计算机基础课程笔记
 

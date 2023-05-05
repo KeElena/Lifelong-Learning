@@ -1,0 +1,50 @@
+version: '3'
+services:
+    rabbitmq1:
+        image: rabbitmq:management
+        deploy:
+          resources:
+            limits:
+              cpus: '2'
+              memory: 8G
+          restart_policy:
+            condition: always
+        ports:
+          - "15672:15672"
+          - "5672:5672"
+        hostname: rabbitmq1
+        container_name: rabbitmq1
+        environment:
+          - RABBITMQ_ERLANG_COOKIE=rabbitcookie
+
+    rabbitmq2:
+        image: rabbitmq:management
+        deploy:
+          resources:
+            limits:
+              cpus: '2'
+              memory: 8G
+          restart_policy:
+            condition: always
+        ports:
+            - "5673:5672"
+        hostname: rabbitmq2
+        container_name: rabbitmq2
+        environment:
+          - RABBITMQ_ERLANG_COOKIE=rabbitcookie
+
+    rabbitmq3:
+        image: rabbitmq:management
+        deploy:
+          resources:
+            limits:
+              cpus: '2'
+              memory: 8G
+          restart_policy:
+            condition: always
+        ports:
+          - "5674:5672"
+        hostname: rabbitmq3
+        container_name: rabbitmq3
+        environment:
+          - RABBITMQ_ERLANG_COOKIE=rabbitcookie

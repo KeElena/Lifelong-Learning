@@ -1,0 +1,2 @@
+./abigen --abi ABI.txt --pkg contractAPI --type VoteSystem --out contractAPI.go
+

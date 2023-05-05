@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<script type="text/javascript" src="/static/jquery-3.6.3.js"></script>
+<script>
+function handler(){
+    $.ajax({
+        url: "./getValue",
+        data: {"msg": $("#input").val()},
+        success: function (data, status) {
+            alert(data.msg+ status);
+        }
+    });
+}
+</script>
+</head>
+<body>
+<p>
+<input type="text" id="input" onblur="handler()">
+</p>
+</body>
+</html>
