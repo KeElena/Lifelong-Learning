@@ -1,0 +1,14 @@
+type Response {
+	Token string `json:"token"`
+}
+
+@server(
+	middleware : UserMiddleware
+)
+
+service middlewares {
+	@handler loginHandler
+	get /login returns (Response)
+	@handler registerHandler
+	get /register returns (Response)
+}

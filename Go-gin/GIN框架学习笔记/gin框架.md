@@ -765,19 +765,26 @@ ctx:=context.Copy(context)
 
 * 定义一个函数，用于返回`gin.HandlerFunc`类型的函数
 * 使用匿名函数构建中间件的具体实现
+* 中间件的代码由三部分组成，分别为过滤前逻辑代码，过滤操作和业务处理完后的逻辑代码
 
 ```go
+//简单的中间件代码结构
 func myHandler() gin.HandlerFunc {
     return func(context *gin.Context){
-        //中间件的一系列操作
+        //过滤前逻辑代码
+        //过滤操作，context.Next()或context.Abort()
+        //过滤后的逻辑代码
     }
 }
 ```
 
+<img src="./photo/中间件.png" style="zoom:80%;" />
+
 **三、中间件请求的过滤与放行**
 
-* 使用`context.Next()`方法对请求放行
+* 使用`context.Next()`方法对请求放行并执行业务代码
 * 使用`context.Abort()`阻止请求
+* <font color=red>放行或拦截请求后要使用`return`退出函数，否则会进行运行逻辑</font>
 
 ```go
 func myHander() gin.HandlerFunc {
@@ -787,6 +794,8 @@ func myHander() gin.HandlerFunc {
 		//判断拦截请求
 		if id == "1" {
 			context.Abort()
+            //拦截后不作处理时必须设置return，否则系统会运行无用逻辑引发bug和漏洞
+            return
 		}
 		//设值
 		context.Set("msg", "access")

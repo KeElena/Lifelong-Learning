@@ -1,0 +1,40 @@
+<mxfile host="Electron" modified="2023-06-25T08:57:30.952Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.1.2 Chrome/106.0.5249.199 Electron/21.4.3 Safari/537.36" etag="MXRRcl_9muQv8eLUlNCx" version="21.1.2" type="device">
+  <diagram name="第 1 页" id="EER2BJlduePmSqLrink0">
+    <mxGraphModel dx="1036" dy="501" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="980" pageHeight="1390" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="130" y="80" width="290" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="110" width="120" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-4" value="机房" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="130" y="80" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-5" value="node-11&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;zone=one" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="140" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-6" value="机柜-1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-7" value="node-12&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;zone=two" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="110" width="120" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-9" value="node-21&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;zone=one" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="140" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-10" value="机柜-2" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="110" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PrNw_-JfpqOutCOA8SbI-11" value="node-22&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;zone=three" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="200" width="90" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

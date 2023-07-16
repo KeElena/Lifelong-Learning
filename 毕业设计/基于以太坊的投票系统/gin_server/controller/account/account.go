@@ -2,9 +2,9 @@ package account
 
 import (
 	"BridgeModule/model"
-	"fmt"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
+	"log"
 )
 
 func Register(c *gin.Context) {
@@ -13,14 +13,14 @@ func Register(c *gin.Context) {
 	//获取数据并绑定的结构体
 	err = c.Bind(&user)
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 		c.JSON(500, gin.H{"msg": false})
 		return
 	}
 	//
 	err = model.Register(&user)
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 		c.JSON(500, gin.H{"msg": false})
 		return
 	}
@@ -30,7 +30,7 @@ func Register(c *gin.Context) {
 	session.Set("username", user.Uname)
 	session.Set("password", user.Password)
 	session.Set("phone", user.Phone)
-	session.Options(sessions.Options{MaxAge: 2592000})
+	session.Set("ethaddr", "")
 	_ = session.Save()
 	c.JSON(200, gin.H{"msg": true})
 }
@@ -43,16 +43,17 @@ func Login(c *gin.Context) {
 	var user model.User
 	err = c.Bind(&user)
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 		c.JSON(500, gin.H{"msg": false})
 		return
 	}
 	//比较手机号
-	if session.Get("phone").(string) != user.Phone {
+	phone := session.Get("phone")
+	if phone == nil || phone.(string) != user.Phone {
 		//查询数据库
 		data, err := model.GetDataByPhone(user.Phone)
 		if err != nil {
-			fmt.Println(err)
+			log.Println(err)
 			c.JSON(200, gin.H{"msg": false})
 			return
 		}
@@ -62,7 +63,6 @@ func Login(c *gin.Context) {
 		session.Set("phone", data.Phone)
 		session.Set("ethaddr", data.Ethaddr)
 		session.Set("keystore", data.Keystore)
-		session.Options(sessions.Options{MaxAge: 2592000})
 		session.Save()
 	}
 	//比较密码

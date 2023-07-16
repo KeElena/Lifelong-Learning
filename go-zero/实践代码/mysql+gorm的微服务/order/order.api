@@ -1,0 +1,24 @@
+type Response {
+	Message string `json:"message"`
+}
+
+type OrderReq {
+	Id int64 `path:"id"`
+}
+
+type HandleInfo {
+	Information string `json:"information"`
+}
+
+type OrderReply {
+	Id     int64  `json:"id"`
+	Name   string `json:"name"`
+	Gender string `json:"gender"`
+}
+
+service order-api {
+	@handler SetHandler
+	get /api/order/set/:id(OrderReq) returns (HandleInfo)
+	@handler GetHandler
+	get /api/order/get/:id(OrderReq) returns (OrderReply)
+}

@@ -1,0 +1,13 @@
+type Response {
+	Uid  int64  `json:"uid"`
+	Name string `json:"name"`
+}
+
+@server(
+	jwt:Auth
+)
+
+service business {
+	@handler getIngoHandler
+	get /get returns (Response)
+}

@@ -1,0 +1,8 @@
+type Response {
+	Msg string `json:"msg"`
+}
+
+service errors {
+	@handler loginHandler
+	get /login returns (Response)
+}

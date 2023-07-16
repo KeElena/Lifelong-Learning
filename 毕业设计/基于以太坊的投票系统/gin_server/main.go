@@ -2,13 +2,18 @@ package main
 
 import (
 	"BridgeModule/router"
-	"fmt"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/redis"
 	"github.com/gin-gonic/gin"
+	"log"
+	"os"
 )
 
 func main() {
+	//log
+	logFile := "./error.log"
+	file, _ := os.OpenFile(logFile, os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0777)
+	log.SetOutput(file)
 	//获取gin对象
 	webServer := gin.Default()
 	//装载session中间件

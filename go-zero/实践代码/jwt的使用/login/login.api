@@ -1,0 +1,8 @@
+type Response {
+	Token string `json:"token"`
+}
+
+service login {
+	@handler loginHandler
+	get /login returns (Response)
+}

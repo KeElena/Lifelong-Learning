@@ -1,0 +1,19 @@
+type RegisterReq {
+	Name   string `json:"name"`
+	Gender string `json:"gender"`
+}
+type RegisterResp {
+	Status string `json:"status"`
+	Data
+}
+
+type Data {
+	Id     int64  `json:"id"`
+	Name   string `json:"name"`
+	Gender string `json:"gender"`
+}
+
+service userapi {
+	@handler RegisterHandler
+	post /register(RegisterReq) returns (RegisterResp)
+}

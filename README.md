@@ -1,58 +1,72 @@
 # 目录
 
-## 编程语言相关笔记
+## 编程语言
 
-[Golang学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/Golang)
+[Golang](https://gitee.com/fish_keqing/personal-code/tree/master/Golang)
 
-[JavaScript学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/JavaScript)
+[JavaScript](https://gitee.com/fish_keqing/personal-code/tree/master/JavaScript)
 
-## 标记语言相关笔记
+## 标记语言
 
-[HTML学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/HTML)
+[HTML](https://gitee.com/fish_keqing/personal-code/tree/master/HTML)
 
-[CSS学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/CSS)
+[CSS](https://gitee.com/fish_keqing/personal-code/tree/master/CSS)
 
-## 虚拟化容器技术相关笔记
-
-[docker学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/docker)
-
-## 关系数据库相关笔记
-
-[MySQL学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/MySQL)
-
-## NoSQL数据库相关笔记
-
-[redis学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/redis)
-
-## 消息中间件相关
-
-[RabbitMQ学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/RabbitMQ)
-
-## 算法
-
-[雪花算法](https://gitee.com/fish_keqing/personal-code/tree/master/算法/雪花算法)
-
-## 服务器代理技术相关笔记
-
-[nginx学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/nginx)
-
-## Go语言相关框架笔记
+## Go后端开发
 
 [Go-gin](https://gitee.com/fish_keqing/personal-code/tree/master/Go-gin)
 
 [基于Go的orm库](https://gitee.com/fish_keqing/personal-code/tree/master/基于Go的orm库)
 
-## Git相关笔记
+## 微服务开发
 
-[Git的简单使用](https://gitee.com/fish_keqing/personal-code/tree/master/Git%E7%9A%84%E4%BD%BF%E7%94%A8)
+[gRPC](https://gitee.com/fish_keqing/personal-code/tree/master/gRPC)
 
-## 微服务框架相关笔记
+[Go-zero](https://gitee.com/fish_keqing/personal-code/tree/master/go-zero)
 
-[gRPC学习笔记](https://gitee.com/fish_keqing/personal-code/tree/master/gRPC)
+## 前端开发
+
+[Vue3.js](https://gitee.com/fish_keqing/personal-code/tree/master/Vue3)
+
+[WebSocket](https://gitee.com/fish_keqing/personal-code/tree/master/WebSocket)
+
+## 虚拟化容器技术
+
+[Docker](https://gitee.com/fish_keqing/personal-code/tree/master/docker)
+
+[Kubernetes](https://gitee.com/fish_keqing/personal-code/tree/master/Kubernetes)
+
+## 关系数据库
+
+[MySQL](https://gitee.com/fish_keqing/personal-code/tree/master/MySQL)
+
+## NoSQL数据库
+
+[Redis](https://gitee.com/fish_keqing/personal-code/tree/master/redis)
+
+[Elasticsearch](https://gitee.com/fish_keqing/personal-code/tree/master/Elasticsearch)
+
+[MongoDB](https://gitee.com/fish_keqing/personal-code/tree/master/MongoDB)
+
+## 消息中间件
+
+[RabbitMQ](https://gitee.com/fish_keqing/personal-code/tree/master/RabbitMQ)
+
+## 算法
+
+[雪花算法](https://gitee.com/fish_keqing/personal-code/tree/master/算法/雪花算法)
+
+## 服务器代理技术
+
+[Nginx](https://gitee.com/fish_keqing/personal-code/tree/master/nginx)
 
 ## 自动化模拟
 
 [pyautogui](https://gitee.com/fish_keqing/personal-code/blob/master/自动化模拟/pyautogui.md)
+
+## Git
+
+[Git的简单使用](https://gitee.com/fish_keqing/personal-code/tree/master/Git%E7%9A%84%E4%BD%BF%E7%94%A8)
 
 ## 计算机基础课程笔记
 

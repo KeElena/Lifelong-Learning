@@ -1,0 +1,1 @@
+测试命令：go test -bench=GetUuid -benchmem

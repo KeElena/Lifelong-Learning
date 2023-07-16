@@ -329,7 +329,7 @@ func GetDataByPhone(phone string) (*User, error) {
 }
 
 // GetKeystoreFromMysql mysql获取keystore
-func GetKeystoreFromMysql(id int) (keystore string, err error) {
+func GetKeystoreFromMysql(id int64) (keystore string, err error) {
 	err = checkMySQL()
 	if err != nil {
 		return "", err
@@ -412,4 +412,19 @@ func GetHistory(uid int64) (list []*History, err error) {
 		}
 	}
 	return list, nil
+}
+
+func GetEthAddr(id int64) (ethAddr string, err error) {
+	err = checkMySQL()
+	if err != nil {
+		return "", err
+	}
+	var user User
+	//获取数据
+	err = mysqlConn.Where("id=?", id).Pluck("ethaddr", &user).Error
+	if err != nil {
+		return
+	}
+	ethAddr = user.Ethaddr
+	return
 }

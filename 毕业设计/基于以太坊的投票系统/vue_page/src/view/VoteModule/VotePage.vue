@@ -54,7 +54,7 @@ export default {
       history:null,
     }
   },
-  created() {
+  mounted() {
     axios.defaults.withCredentials=true;
     axios.post("/vote/userinfo").then((res)=>{
       if(res.data.msg){
@@ -136,6 +136,9 @@ export default {
             type:"success"
           });
           this.userinfo.ethbalance=(res.data.balance/1000000000000000000).toFixed(3)+"eth"
+          if(res.data.ethaddr!=null){
+            this.userinfo.ethaddr=res.data.ethaddr
+          }
         }
       }).catch(()=>{
         this.$message({
