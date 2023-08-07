@@ -113,6 +113,7 @@ services:
     environment:
       - "discovery.type=single-node"
       - "xpack.security.enabled=false"
+      - "ES_JAVA_OPTS=-Xms64m -Xmx1024m"
     volumes:
       - "${PWD}/elasticsearch/plugins:/usr/share/elasticsearch/plugins"
       - "${PWD}/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml"
@@ -307,21 +308,28 @@ PUT /test
 * 对于中文需要使用ik分词器，则需要修改索引的属性
 
 ```json
-PUT /test
+PUT /your_index
+//设置IK分词器
 {
-  "mappings": {
-    "properties": {
-      "name":{
-        "type": "text",
-        //使用ik分词器
-        "analyzer": "ik_max_word",
-        "search_analyzer": "ik_smart"
-      },
-      "age":{
-        "type": "long"
+  "settings": {
+    "analysis": {
+      "analyzer": {
+        "ik_analyzer": {
+          "type": "custom",
+          "tokenizer": "ik_max_word",
+          "use_smart": false
+        }
       }
     }
-    
+  },
+    //设置字段
+  "mappings": {
+    "properties": {
+      "content": {
+        "type": "text",
+        "analyzer": "ik_analyzer"
+      }
+    }
   }
 }
 ```
@@ -462,7 +470,7 @@ GET /test/_search
 }
 ```
 
-### boo组合查询
+### bool组合查询
 
 **一、多条件匹配查询**
 
@@ -802,12 +810,14 @@ if err!=nil{
 * 使用`.Indices.Create.WithContext`可以设置context上下文（本质是闭包封装参数返回函数）
 
 ```go
-ctx:=context.Background()
-_,err=client.Indics.Create("test",client.Indices.Create.WithContext(ctx))
+reader:=strings.NewReader(`{"properties":{"name":{"type":"text","analyzer":"ik_max_word","search_analyzer":"ik_smart"},"age":{"type":"long"}}}`)
+_,err=client.Indics.Create("test",client.Indices.Create.WithTimeout(time.Second),client.Indices.Create.WithBody(reader))
+//err为空时只表示发送成功，不表示执行成功
 if err!=nil{
     log.Println(err)
     return
 }
+//判断是否执行成功需要获取resp，查看响应代码是否为200
 ```
 
 **二、配置索引库**
@@ -846,7 +856,7 @@ if resp.StatusCode==404{
 ```go
 reader:=strings.NewReader(`{"name":"拾枝杂谈","age":20}`)
 ctx:=context.Background()
-resp,er:=client.Create("test","1",reader,client.Create.WithContext(ctx))
+resp,err:=client.Create("test","1",reader,client.Create.WithContext(ctx))
 if err!=nil{
     log.Println(err)
     return
@@ -953,7 +963,7 @@ switch resp.StatusCode{
 ```go
 reader:=strings.NewReader(`{"query":{"match":{"name":"拾枝杂谈"}}}`)
 ctx:=context.Background()
-resp,er:=client.Search(client.Search.WithBody(reader),client.Search.WithContext(ctx))
+resp,err:=client.Search(client.Search.WithBody(reader),client.Search.WithContext(ctx))
 if err!=nil{
     log.Println(err)
     return

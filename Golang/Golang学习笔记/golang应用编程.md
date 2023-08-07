@@ -547,13 +547,13 @@ fmt.Println(string(s))					//转为字符串打印
 
 ​		◼用`url.ParseRequestURI`方法加载URI
 
-​		◼定义一个`url.Value{}`结构体用于存放参数
+​		◼使用`url.Value{}`结构体用于存放键值对
 
 ​		◼`Encode()`编码参数并加载到URI的`RawQuery`中（将非英文非数字转换成Unicode编码）
 
 ​		◼使用`os.Open()`打开文件，使用`bufio.NewReader`创建一个reader对象
 
-​		◼使用`http.NewRequest()`方法并传进需要的数据建立请求
+​		◼使用`http.NewRequest()`方法构建请求
 
 ​		◼使用`http.DefaultClient.Do()`发送请求并返回响应，结束时要关闭`resq.Body`io对象释放http连接
 
@@ -1213,9 +1213,32 @@ func addPoint(key string,addNum float64,elem string)(score float64,err error){
 }
 ```
 
+# 数据缓冲bufio
 
+## bufio缓冲实现方式
 
+**一、底层实现方式**
 
+* 创建缓冲对象的同时，还会创建一个缓冲管道
+* 缓冲管道可以复用，使用`Read()`进行读取数据
+* 缓冲管道每次被读完时会读取一次文件
+* 缓冲管道被读完前，如果数据长度低于字节切片长度，则会直接返回管道剩余的数据，不会读文件后补充数据
+
+**二、读取数据时常见bug**
+
+* 读取固定长度字节时，要求管道长度是固定字节长度的倍数，否则复用管道时读取的字节长度低于固定长度
+
+## 创建缓冲对象
+
+* 使用`bufio.NewReader()`创建默认管道长度的缓冲对象
+* 使用`bufio.NewReaderSize()`创建自定义管道长度的缓冲对象
+
+```go
+//默认管道长度为4KB
+bufio.NewReader(fileObj)
+//自定义4MB的管道
+bufio.NewReaderSize(fileObj,4*1024*1024)
+```
 
 
 

@@ -98,7 +98,7 @@ goctl env check -i -f --verbose
 
 **一、Go-zero文档**
 
-[Go-zero文档](https://go-zero.dev/cn/docs/introduction)
+[Go-zero文档](https://go-zero.dev/docs/tutorials)
 
 **二、Go-zero特点**
 
@@ -1803,7 +1803,7 @@ func main(){
     //设置writer对象到logx里
     logx.SetWriter(writer)
     //设置日志相关的配置
-    logx.SetUp(&logx.LogConf{Mode:"file",Path:"./log"})
+    err=logx.SetUp(&logx.LogConf{Mode:"file",Path:"./log"})
     logx.Must(err)
     defer logx.Close()
     

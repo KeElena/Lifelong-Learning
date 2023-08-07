@@ -98,7 +98,7 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 * 使用`syntax`项限制proto语法
 
 ```protobuf
-syntax="proto3"
+syntax="proto3";
 ```
 
 **二、设置生产代码位置和包名**
@@ -109,7 +109,7 @@ syntax="proto3"
 * 第一个参数为生成代码的存放路径，第二个参数为包名（两个用`;`相隔）
 
 ```protobuf
-option go_package=".;server"
+option go_package=".;server";
 ```
 
 **三、定义消息结构体**
@@ -155,7 +155,19 @@ message HelloRequest{
 }
 ```
 
-**六、嵌套消息结构体**
+**六、组合结构体**
+
+```protobuf
+message Msg{
+	string msg=1;
+}
+message Content{
+	string userName=1;
+	Msg msg=2;
+}
+```
+
+**七、嵌套消息结构体**
 
 * 一个消息结构体由多个消息结构体组成
 * 使用`.`调用嵌套的结构体
@@ -627,7 +639,9 @@ func (s *server)SayHello( ctx context.Context,req *pb.HelloRequest)(*pb.HelloRes
 }
 ```
 
+# 拦截器
 
+https://www.cnblogs.com/xiangxiaolin/p/12791281.html#autoid-22-0-0
 
 
 

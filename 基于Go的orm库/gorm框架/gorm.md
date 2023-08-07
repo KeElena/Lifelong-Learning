@@ -82,6 +82,7 @@ if err != nil {
 
 * 使用`create()`插入数据
 * 使用`Table()`指定表
+* 会返回自增id的值到结构体里
 
 ```go
 var err error
@@ -303,7 +304,7 @@ fmt.Println(ValueSlice)
 ## 排序查询
 
 * 使用`Order()`选择字段和排序方式进行排序
-* 输入的值至少要含有两个用空格隔开的值，一个为字段一个为排序规则
+* 输入的值至少要含有两个并用空格隔开，一个为字段一个为排序规则
 
 ```go
 var ValueSlice []int

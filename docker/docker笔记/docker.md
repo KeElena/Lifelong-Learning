@@ -569,7 +569,7 @@ docker run ... --entrypoint uname -v
 
 ```shell
 #ubuntu，使用官方默认的Dockerfile文件名
-docker build -t diyubuntu:latest .						#不用漏.
+docker build -t diyubuntu:latest .						#不要漏.
 docker run -it diyubuntu								#不需要tag
 #centos，不使用官方默认的文件名
 docker build -f mycentosDockerfile -t diycentos:0.1 .	#构建centos
@@ -1238,8 +1238,10 @@ services:
 networks:				
 	mynet:
 		driver: bridge
-		config:						#没有指定可以不用
-			- "172.16.0.0/24"		
+		ipam:
+			config:
+				- subnet: 172.18.0.0/16
+				  gateway: 172.18.0.1
 #引用已有的docker网络方式一
 networks:
 	external:
@@ -1359,7 +1361,7 @@ networks:
 
 ​		◼**外部访问内部时，如果IP对应的机器没有部署需要的服务会自动转到已部署对应服务的机器上**
 
-​		◼Swarm集群自带负载均衡
+​		◼Swarm集群自带负载均衡，集群集群端口占用情况统一
 
 **二、docker swarm命令**
 
