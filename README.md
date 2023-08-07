@@ -68,7 +68,5 @@
 
 [Git的简单使用](https://gitee.com/fish_keqing/personal-code/tree/master/Git%E7%9A%84%E4%BD%BF%E7%94%A8)
 
-## 计算机基础课程笔记
 
-[计算机图形学笔记](https://gitee.com/fish_keqing/personal-code/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9B%BE%E5%BD%A2%E5%AD%A6)
 
