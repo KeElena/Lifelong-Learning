@@ -462,3 +462,164 @@ http{
     }
 }
 ```
+
+# 实践
+
+## 开发环境
+
+```nginx
+worker_processes 1;
+
+events{
+
+    worker_connections 1024;
+
+}
+
+http{
+
+    include /etc/nginx/mime.types;
+
+    default_type application/octet-stream;
+
+    resolver 114.114.114.114;
+
+    sendfile on;
+
+    keepalive_timeout 65;
+
+    server{
+
+        listen 80;
+
+        server_name 0.0.0.0;
+
+        location /{
+
+            root /usr/share/nginx/html/dist;
+
+            index index.html;
+
+        }
+
+        location /api/spyder/progress{
+
+            proxy_pass http://172.20.0.6:8888;
+
+            proxy_http_version 1.1;
+
+            proxy_set_header Upgrade $http_upgrade;
+
+            proxy_set_header Connection "Upgrade";
+
+        }
+
+        location /api/spyder{
+
+            proxy_pass http://172.20.0.6:8888;
+
+        }
+
+        location /api/get{
+
+            proxy_pass http://172.20.0.6:8888;
+
+        }
+
+        location /api/video{
+
+            proxy_pass http://172.20.0.10:8888;
+
+        }
+
+    }
+
+}
+```
+
+## 生产环境
+
+**一、SSL的部署**
+
+```nginx
+worker_processes 1;
+
+events{
+
+    worker_connections 1024;
+
+}
+
+http{
+
+    include /etc/nginx/mime.types;
+
+    default_type application/octet-stream;
+
+    resolver 114.114.114.114;
+
+    sendfile on;
+
+    keepalive_timeout 65;
+
+    server{
+
+        listen 443 ssl;
+
+	ssl_certificate /usr/share/nginx/cert/miyofun.top/miyofun.top.pem;
+
+	ssl_certificate_key /usr/share/nginx/cert/miyofun.top/miyofun.top.key;
+
+	ssl_session_timeout 5m;
+
+	ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+
+	ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+	ssl_prefer_server_ciphers on;
+
+        server_name miyofun.top;
+
+        location /{
+
+            root /usr/share/nginx/html/dist;
+
+            index index.html;
+
+        }
+
+        location /api/spyder/progress{
+
+            proxy_pass http://172.20.0.6:8888;
+
+            proxy_http_version 1.1;
+
+            proxy_set_header Upgrade $http_upgrade;
+
+            proxy_set_header Connection "Upgrade";
+
+        }
+
+        location /api/spyder{
+
+            proxy_pass http://172.20.0.6:8888;
+
+        }
+
+        location /api/get{
+
+            proxy_pass http://172.20.0.6:8888;
+
+        }
+
+        location /api/video{
+
+            proxy_pass http://172.20.0.10:8888;
+
+        }
+
+    }
+
+}
+```
+

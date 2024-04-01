@@ -670,6 +670,8 @@ func (l *GetUserLogic)GetUser(in *user.IdRequest)(*user.UserResponse,error){
 **一、编写api文件**
 
 * 添加set方法和get方法
+* 使用Post方法时，请求结构体的`tag`为`form`，不是`json`
+* `tag`末尾加`optional`表示可选参数
 
 ```go
 //order.api
